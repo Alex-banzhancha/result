@@ -1,2 +1,2 @@
 # result
-Exhibit proof sentence within same step into one line, code and result file, with name "natrualproofs_proofwiki.json" is also updated.
+Exhibit proof sentence within same step into one line, code and result file, with name "naturalproofs_proofwiki.json" is also updated.
