@@ -27,9 +27,13 @@ f = open("datasetsBase.json", 'r')
 ds = json.load(f)
 for i in tqdm(range(len(js['dataset']['theorems']))):
     for j in js['dataset']['theorems'][i]['proofs']:
+        if j['contents'] == []:
+            contents = None
+        else:
+            contents = j['contents']
         ds['dataset'].append({'title': js['dataset']['theorems'][i]['title'],
-                                      'proof':j['contents']})
-result = open("datasets1.json", "w")
+                                      'proof':contents})
+result = open("data.json", "w")
 result.write(json.dumps(ds, indent=2))
 JsonFile.close
 result.close
