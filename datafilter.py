@@ -21,6 +21,8 @@ for i in tqdm(range(len(js['dataset']['theorems']))):
                 prev = item
             else:
                 prev = prev + " " + item
+                if k == len(js['dataset']['theorems'][i]['proofs'][j]['contents'])-1:
+                    content.append(prev)
         js['dataset']['theorems'][i]['proofs'][j]['contents'] = content
 
         if js['dataset']['theorems'][i]['proofs'][j]['contents'] == []:
