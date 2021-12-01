@@ -1,7 +1,7 @@
 import json
 from tqdm import tqdm
 
-
+'''
 JsonFile = open('final.json', 'r')
 js = json.load(JsonFile)
 f = open("datasetsBase.json", 'r')
@@ -19,18 +19,18 @@ result = open("datasets.json", "w")
 result.write(json.dumps(ds, indent=2))
 JsonFile.close
 result.close
-
 '''
+
 JsonFile = open('final.json', 'r')
 js = json.load(JsonFile)
 f = open("datasetsBase.json", 'r')
 ds = json.load(f)
-for i in tqdm(range(len(js['dataset']['theorems']))):
+for i in tqdm(range(len(js['dataset']))):
     for j in js['dataset']['theorems'][i]['proofs']:
-        ds['dataset']['theorems'].append({'title': js['dataset']['theorems'][i]['title'],
+        ds['dataset'].append({'title': js['dataset']['theorems'][i]['title'],
                                       'proof':j['contents']})
 result = open("datasets1.json", "w")
 result.write(json.dumps(ds, indent=2))
 JsonFile.close
 result.close
-'''
+
