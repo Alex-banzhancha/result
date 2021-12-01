@@ -25,7 +25,7 @@ JsonFile = open('final.json', 'r')
 js = json.load(JsonFile)
 f = open("datasetsBase.json", 'r')
 ds = json.load(f)
-for i in tqdm(range(len(js['dataset']))):
+for i in tqdm(range(len(js['dataset']['theorems']))):
     for j in js['dataset']['theorems'][i]['proofs']:
         ds['dataset'].append({'title': js['dataset']['theorems'][i]['title'],
                                       'proof':j['contents']})
