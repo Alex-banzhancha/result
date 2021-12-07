@@ -32,7 +32,7 @@ for i in tqdm(range(len(js['dataset']['theorems']))):
             item = js['dataset']['theorems'][i]['proofs'][j]['contents'][k]
             prev = prev + " \\n " + item
         js['dataset']['theorems'][i]['proofs'][j]['contents'] = prev
-result = open("result.json", "w")
+result = open("final.json", "w")
 result.write(json.dumps(js, indent=2))
 JsonFile.close
 result.close
